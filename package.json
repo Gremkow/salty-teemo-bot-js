@@ -1,0 +1,26 @@
+{
+  "name": "salty-teemo-bot",
+  "version": "1.0.0",
+  "description": "salty-teemo-betting-bot",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gremkow/salty-teemo-bot.git"
+  },
+  "keywords": [
+    "bot",
+    "betting"
+  ],
+  "author": "@holger.albrecht",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Gremkow/salty-teemo-bot/issues"
+  },
+  "homepage": "https://github.com/Gremkow/salty-teemo-bot#readme",
+  "dependencies": {
+    "tmi.js": "^1.5.0"
+  }
+}
