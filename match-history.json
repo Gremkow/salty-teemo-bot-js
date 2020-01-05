@@ -1,0 +1,172 @@
+{
+  "games": [
+    {
+      "balance": 5733,
+      "betTime": 192602,
+      "blueShrooms": 79747,
+      "redShrooms": 586419,
+      "blueBets": 23,
+      "redBets": 70,
+      "payOutRatio": 7.353492921363813,
+      "betOn": "blue",
+      "amountBet": 573,
+      "winner": "blue"
+    },
+    {
+      "balance": 9947,
+      "betTime": 192602,
+      "blueShrooms": 316109,
+      "redShrooms": 127862,
+      "blueBets": 74,
+      "redBets": 32,
+      "payOutRatio": 2.472266975332781,
+      "betOn": "red",
+      "amountBet": 994,
+      "winner": "blue"
+    },
+    {
+      "balance": 8953,
+      "betTime": 202916,
+      "blueShrooms": 146940,
+      "redShrooms": 208461,
+      "blueBets": 55,
+      "redBets": 57,
+      "payOutRatio": 1.418681094324214,
+      "betOn": "blue",
+      "amountBet": 895,
+      "winner": "red"
+    },
+    {
+      "balance": 8058,
+      "betTime": 205180,
+      "blueShrooms": 164895,
+      "redShrooms": 170415,
+      "blueBets": 58,
+      "redBets": 59,
+      "payOutRatio": 0.9676084851685591,
+      "betOn": "red",
+      "amountBet": 805,
+      "winner": "red"
+    },
+    {
+      "balance": 8837,
+      "betTime": 198309,
+      "blueShrooms": 196554,
+      "redShrooms": 192083,
+      "blueBets": 65,
+      "redBets": 64,
+      "payOutRatio": 1.0232763961412514,
+      "betOn": "red",
+      "amountBet": 883,
+      "winner": "red"
+    },
+    {
+      "balance": 9741,
+      "betTime": 224582,
+      "blueShrooms": 280045,
+      "redShrooms": 116565,
+      "blueBets": 68,
+      "redBets": 48,
+      "payOutRatio": 2.4024793033929566,
+      "betOn": "red",
+      "amountBet": 974,
+      "winner": "red"
+    },
+    {
+      "balance": 12081,
+      "betTime": 186531,
+      "blueShrooms": 121366,
+      "redShrooms": 319369,
+      "blueBets": 35,
+      "redBets": 77,
+      "payOutRatio": 2.63145361962988,
+      "betOn": "blue",
+      "amountBet": 1208,
+      "winner": "red"
+    },
+    {
+      "balance": 10873,
+      "betTime": 212336,
+      "blueShrooms": 168049,
+      "redShrooms": 268914,
+      "blueBets": 49,
+      "redBets": 81,
+      "payOutRatio": 1.6002118429743706,
+      "betOn": "blue",
+      "amountBet": 1087,
+      "winner": "red"
+    },
+    {
+      "balance": 10272,
+      "betTime": 185819,
+      "blueShrooms": 173353,
+      "redShrooms": 174900,
+      "blueBets": 58,
+      "redBets": 64,
+      "payOutRatio": 0.9911549456832476,
+      "betOn": "red",
+      "amountBet": 1027,
+      "winner": "red"
+    },
+    {
+      "balance": 11290,
+      "betTime": 206265,
+      "blueShrooms": 309037,
+      "redShrooms": 127165,
+      "blueBets": 78,
+      "redBets": 39,
+      "payOutRatio": 2.4302048519639836,
+      "betOn": "red",
+      "amountBet": 1129,
+      "winner": "red"
+    },
+    {
+      "balance": 14034,
+      "betTime": 210831,
+      "blueShrooms": 203067,
+      "redShrooms": 259746,
+      "blueBets": 43,
+      "redBets": 73,
+      "payOutRatio": 1.2791147749265022,
+      "betOn": "blue",
+      "amountBet": 1403,
+      "winner": "blue"
+    },
+    {
+      "balance": 16073,
+      "betTime": 212785,
+      "blueShrooms": 147072,
+      "redShrooms": 315630,
+      "blueBets": 57,
+      "redBets": 61,
+      "payOutRatio": 2.1460917101827675,
+      "betOn": "blue",
+      "amountBet": 1607,
+      "winner": "red"
+    },
+    {
+      "balance": 14466,
+      "betTime": 217168,
+      "blueShrooms": 746899,
+      "redShrooms": 49793,
+      "blueBets": 111,
+      "redBets": 26,
+      "payOutRatio": 15.000080332576868,
+      "betOn": "red",
+      "amountBet": 1446,
+      "winner": "blue"
+    },
+    {
+      "balance": 13020,
+      "betTime": 206800,
+      "blueShrooms": 119771,
+      "redShrooms": 212936,
+      "blueBets": 51,
+      "redBets": 68,
+      "payOutRatio": 1.777859415050388,
+      "betOn": "blue",
+      "amountBet": 1302,
+      "winner": "na"
+    }
+  ]
+}
