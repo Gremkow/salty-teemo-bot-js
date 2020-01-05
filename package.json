@@ -22,5 +22,8 @@
   "homepage": "https://github.com/Gremkow/salty-teemo-bot#readme",
   "dependencies": {
     "tmi.js": "^1.5.0"
+  },
+  "devDependencies": {
+    "prettier": "^1.19.1"
   }
 }
