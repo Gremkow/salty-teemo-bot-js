@@ -1,17 +1,24 @@
 const tmi = require("tmi.js");
-var bettingStarted = "False";
-var bettingEnded = "False";
+const fs = require("fs");
 
-var totalBlueShrooms = 0;
-var totalRedShrooms = 0;
-var totalBlueBets = 0;
-var totalRedBets = 0;
+let bettingStarted = "False";
+let bettingEnded = "False";
 
-var betTime = 0;
-var betStartDate = 0;
-var betStartTime = 0;
+let totalBlueShrooms = 0;
+let totalRedShrooms = 0;
+let totalBlueBets = 0;
+let totalRedBets = 0;
 
-var didBet = "False";
+let betTime = 0;
+let betStartDate = 0;
+let betStartTime = 0;
+
+let didBet = "False";
+let betAmount = 0;
+let underdog = "none";
+let currentBalance = 0;
+let oldBalance = 0;
+let payOutRatio = 0;
 
 // Define configuration options
 const opts = {
@@ -46,12 +53,17 @@ function onMessageHandler(target, context, message, self) {
   // Remove whitespace from chat message
   const messageContent = message.trim();
 
-  if (messageContent.includes("@" + opts.identity.username + " - You have ")) {
-    balanceSplit = messageContent.split(" ");
-    currentBalance = parseInt(balanceSplit[4]);
-    console.log("Current Balance: " + currentBalance);
+  if (context.username.trim() === "sangokaku") {
+    console.log(
+      "\u001b[" + 91 + "m" + "sangokaku: " + messageContent + "\u001b[0m"
+    );
   }
 
+  if (context.username.trim() === "Majorlagg") {
+    console.log(
+      "\u001b[" + 91 + "m" + "Majorlagg: " + messageContent + "\u001b[0m"
+    );
+  }
   /*
   #######################################################
   ###### Handling messages from user "xxsaltbotxx" ######
@@ -110,10 +122,7 @@ function onMessageHandler(target, context, message, self) {
 
       // Bet if current bet cycle reached 160 seconds
       if (betTime >= 160000 && didBet.includes("False")) {
-        underdog = "blue";
-        if (totalBlueShrooms > totalRedShrooms) {
-          underdog = "red";
-        }
+        underdog = totalBlueShrooms > totalRedShrooms ? "red" : "blue";
         betAmount = Math.floor(currentBalance / 10);
         client.say(target, `!${underdog} ${betAmount}`);
         console.log(`Bot bet ${betAmount} on ${underdog}`);
@@ -130,6 +139,40 @@ function onMessageHandler(target, context, message, self) {
   ) {
     if (!bettingEnded.includes("True")) {
       console.log("Betting Has Ended!");
+      // calculate pay out ratio if successful
+      payOutRatio = underdog.includes("blue")
+        ? totalRedShrooms / totalBlueShrooms
+        : totalBlueShrooms / totalRedShrooms;
+      // read match-history.json and parse it as JSON
+      let rawdata = fs.readFileSync("match-history.json");
+      let matchHistoryJSON = JSON.parse(rawdata);
+
+      // Determine winner of previous match by comparing current balance with balance before last bet
+      previousMatch = matchHistoryJSON.games[matchHistoryJSON.games.length - 1];
+      previousMatch.winner =
+        previousMatch.balance < currentBalance
+          ? previousMatch.betOn
+          : previousMatch.betOn.includes("red")
+          ? "blue"
+          : "red";
+
+      // populate match data to be stored in JSON
+      jsonString = {
+        balance: currentBalance,
+        betTime: betTime,
+        blueShrooms: totalBlueShrooms,
+        redShrooms: totalRedShrooms,
+        blueBets: totalBlueBets,
+        redBets: totalRedBets,
+        payOutRatio: payOutRatio,
+        betOn: underdog,
+        amountBet: betAmount,
+        winner: "na"
+      };
+      // store match data in JSON object
+      matchHistoryJSON.games.push(jsonString);
+      // write JSON object to file
+      fs.writeFileSync("match-history.json", JSON.stringify(matchHistoryJSON));
     }
     // Mark current betting round as ended and reset bet cycle variables
     bettingEnded = "True";
